@@ -1,0 +1,19 @@
+{% load url from future %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% if form.instance.id %}
+    <form action="/edituser/{{ form.instance.id }}" method="POST" class='ui form'>
+{% else %}
+    <form action="" method="POST" class='ui form'>
+{% endif %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="SEND    ">
+</form>
+</body>
+</html>

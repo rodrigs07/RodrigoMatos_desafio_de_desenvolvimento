@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+{% if usuario %}
+    <table>
+        {% for user in  usuario%}
+
+
+        <tr>
+        <td>{{ user.nome }} </td>
+                <td>{{ user.cargo }} </td>
+                <td><a href="/edituser/{{ user.id }}" > Edit</a></td>
+                <td><a href="/deluser/{{ user.id }}"> Delete</a></td>
+            </tr>
+
+    {% endfor %}
+    </table>
+    {% endif %}
+
+</body>
+</html>

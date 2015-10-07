@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from users.views import CadUser,ShowAllUsers,DeleteUser
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'adduser/', CadUser.as_view(), name='add'),
+    url(r'edituser/(?P<id>\d+)', CadUser.as_view(), name='edit'),
+    url(r'showall/',  ShowAllUsers.as_view(), name='showall'),
+    url(r'deluser/(?P<id>\d+)',  DeleteUser.as_view(), name='dell'),
+
 ]
